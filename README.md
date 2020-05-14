@@ -9,17 +9,6 @@
 - belongs_to :group
 - belongs_to :user
 
-## groupsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|group_name|text|null :false|
-|user_id|integer|null: false|
-
-### Association
-- has_many :users
-
-
 ## usersテーブル
 
 |Column|Type|Options|
@@ -30,8 +19,21 @@
 |password|text|null: false|
 
 ### Association
-- has_many :groups
-- has_many :posts, through: :groups
+- has_many :groups_users
+- has_many :groups, through: :groups_users
+- has_many :posts
+
+## groupsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|group_name|text|null :false|
+|user_id|integer|null: false|
+
+### Association
+- has_many :groups_users
+- has_many :users, through: :groups_users
+- has_many :posts
 
 ## postsテーブル
 |Column|Type|Options|
@@ -43,3 +45,4 @@
 
 ### Association
 - belongs_to :user
+- belongs_to :groups
