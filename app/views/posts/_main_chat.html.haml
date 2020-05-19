@@ -1,0 +1,35 @@
+.chat-main
+  .chat-main__group-info
+    .group
+      .group__name
+        junki
+      .group__assign
+        Member : junki
+    = link_to "#", class: "chat-main__group-info__edit" do
+      Edit
+  
+  .chat-main__post-list
+    .post-info
+      .post-info__name
+        junki
+      .post-info__date
+        2019/11/20(Wed)17:50
+    .post-message
+      こんばんは
+
+    .post-info
+      .post-info__name
+        yamada
+      .post-info__date
+        2019/11/22(Fri)10:00
+    .post-message
+      おはようございます
+
+  .chat-main__post-form
+    %form.form
+      .form__contents
+        %input.form__contents__text{type: "text_area", placeholder: "type a message"}
+        %label.form__contents__image
+          =  icon('far', 'image')
+          %input.form__contents__image__file{type: "file"}
+      %input.submit{type: "submit", value: "Send"}
