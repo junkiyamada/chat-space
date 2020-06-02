@@ -38,6 +38,7 @@
 
   &__post-list{
     background: #fafafa;
+    overflow: auto;
     height: calc(100vh - 100px - 90px);
     .post-info {
       padding-top: 35px;
